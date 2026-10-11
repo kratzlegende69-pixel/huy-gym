@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#080808">
+<title>Huy Gym</title>
+<link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/png" href="icon-192.png">
+<link rel="apple-touch-icon" href="icon-192.png">
+<meta name="theme-color" content="#080808">
+<meta name="mobile-web-app-capable" content="yes">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&display=swap">
+<style>
+:root{--bg:#080808;--card:#111;--line:#1c1c1c;--tx:#f0f0f0;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font-family:'DM Mono','Courier New',monospace;padding:24px 16px 48px;max-width:620px;margin-inline:auto}
+.box{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 20px;margin-bottom:20px}
+.cap{font-size:10px;letter-spacing:3px;color:#555;text-transform:uppercase;margin-bottom:12px}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.n{border-radius:10px;padding:10px 14px}
+.n small{display:block;font-size:9px;opacity:.7;letter-spacing:1px;text-transform:uppercase;margin-bottom:4px}
+.n b{font-size:16px}.n i{display:block;font-size:9px;opacity:.5;font-style:normal}
+.sub{margin-top:12px;font-size:10px;color:#777;line-height:1.7}
+h1{font-size:26px;margin:0;letter-spacing:-1px}
+.hd{margin-bottom:22px}.hd p{font-size:11px;color:#777;margin:6px 0 0;line-height:1.6}
+.strip{display:flex;gap:5px;margin-bottom:20px}
+.strip div{flex:1;border-radius:8px;padding:8px 2px;text-align:center;font-size:11px;font-weight:700}
+.strip span{display:block;font-size:7px;opacity:.6;margin-top:2px;font-weight:400}
+.tabs{display:grid;gap:6px;margin-bottom:6px}.t3{grid-template-columns:repeat(3,1fr)}.t2{grid-template-columns:1fr 1fr;margin-bottom:18px}
+.tb{padding:11px 4px;background:var(--card);border:1px solid var(--line);border-radius:10px;color:#777;font:700 10px/1.5 inherit;font-family:inherit;cursor:pointer;min-height:44px}
+.tb span{font-size:8px;opacity:.7}
+.tb.on{border:0;color:#000}
+.card{border-radius:14px;overflow:hidden;margin-bottom:22px;border:1px solid var(--line)}
+.ch{padding:18px 20px;color:#000}
+.ch .f{font-size:10px;font-weight:700;letter-spacing:4px;opacity:.45}
+.ch .l{font-size:18px;font-weight:700;margin-top:2px}
+.ch .d{font-size:11px;opacity:.6;margin-top:6px;line-height:1.5}
+.pills{margin-top:10px;display:flex;gap:8px;flex-wrap:wrap}
+.pills span{font-size:10px;background:rgba(0,0,0,.1);padding:3px 8px;border-radius:5px;opacity:.7}
+.ex{background:var(--card);border-bottom:1px solid #181818;cursor:pointer}.ex:last-child{border:0}.ex.open{background:#151515}
+.er{padding:14px 20px;display:flex;align-items:center;gap:10px}
+.num{width:24px;height:24px;border-radius:50%;background:#1e1e1e;color:#888;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center;flex:none}
+.nm{flex:1;min-width:0}.nm b{font-size:14px;font-weight:600;color:#eee;display:block}
+.meta{display:flex;gap:6px;margin-top:4px;align-items:center;flex-wrap:wrap}
+.ty{font-size:9px;padding:2px 7px;border-radius:4px;font-weight:700}
+.mu{font-size:10px;color:#777}
+.sw{display:flex;gap:5px;flex:none}
+.sw span{background:#1a1a1a;border:1px solid #252525;border-radius:6px;padding:5px 10px;font-size:12px;font-weight:700;color:#999}
+.no{padding:0 20px 14px 54px}
+.no div{background:#0d0d0d;border-radius:8px;padding:10px 14px;font-size:11px;color:#999;line-height:1.7;border:1px solid}
+.mr{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;gap:8px;font-size:11px;color:#888}
+.mr em{color:#666;font-size:10px;font-style:normal}
+.mr div{display:flex;gap:4px;flex:none}
+.mr span{font-size:9px;font-weight:700;padding:3px 7px;border-radius:4px;border:1px solid}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<script>
+var P=[
+{t:'Tag 1',f:'BRUST',l:'Brust komplett',c:'#e8ff47',b:'Nur Brust – dafür jede Übung mit maximaler Energie und voller Konzentration.',u:[
+['Incline Benchpress','Maschine',4,'10–12','Brust oben','Langsam runter (3 Sek), explosiv drücken. Schwerste Übung zuerst.'],
+['Flat Benchpress','Maschine',4,'8–10','Brust mitte','Schulterblätter zusammenziehen und halten während du drückst.'],
+['Pec Deck','Maschine',3,'12–15','Brust Isolation','Oben 1 Sek halten. Den Stretch unten aktiv spüren.'],
+['Kabel Crossover','Kabel',3,'12–15','Untere Brust + Brust gesamt','Kabel von oben, Hände kreuzen unten. Maximale Dehnung oben.']]},
+{t:'Tag 2',f:'RÜCKEN',l:'Rücken komplett',c:'#47c8ff',b:'Rücken in Breite und Tiefe. Face Pull schützt die Schulter langfristig.',u:[
+['Latzug','Maschine',4,'10–12','Latissimus (Breite)','Schulterblätter aktiv zusammenziehen. Nicht mit Schwung reißen.'],
+['Rudern','Maschine',4,'8–10','Mittlerer Rücken (Tiefe)','Ellbogen nah am Körper, Brust raus, voll durchziehen.'],
+['Einarmiges Rudern','Kabel',3,'12–15','Rücken einseitig','Schwächere Seite zuerst. Gleicht Ungleichgewichte aus.'],
+['Face Pull','Kabel',4,'15–20','Hintere Schulter + Rotatorenmanschette','Kabel auf Augenhöhe, Hände ans Gesicht ziehen. Kein schweres Gewicht.']]},
+{t:'Tag 3',f:'BEINE',l:'Quad · Gesäß · Hamstrings · Waden',c:'#ff6b47',b:'Unterkörper komplett. Jede große Muskelgruppe der Beine abgedeckt.',u:[
+['Beinpresse','Maschine',4,'10–12','Quad + Gesäß','Tief runter für mehr Gesäß-Aktivierung. Schwerste Übung zuerst.'],
+['Hip Thrust','Maschine',4,'10–12','Gesäß (Gluteus maximus)','Oben 2 Sek halten und Gesäß aktiv anspannen. Beste Gesäß-Übung.'],
+['Beinbeuger sitzend','Maschine',3,'12–15','Hamstrings','Sitzend gibt mehr Dehnung als liegend – besser für Wachstum.'],
+['Wadenheben stehend','Maschine',4,'15–20','Waden (Gastrocnemius)','Unten vollständig dehnen, oben kurz halten. Waden brauchen hohe Wiederholungen.']]},
+{t:'Tag 4',f:'SCHULTERN + BAUCH',l:'Schulter · Bauch',c:'#ff9f47',b:'Alle 3 Schulterköpfe gezielt abgedeckt. Bauch am Ende wenn noch Energie da ist.',u:[
+['Schulterdrücken','Maschine',4,'10–12','Schulter vorne & mitte','Ellbogen leicht vor dem Körper halten – schont das Gelenk.'],
+['Seitheben','Kabel',4,'15–20','Schulter seitlich','Leichtes Gewicht, Kabel von unten. Macht die Schulter breiter.'],
+['Reverse Fly','Maschine',3,'15–20','Schulter hinten','Sehr leichtes Gewicht, Schulterblätter zusammendrücken oben.'],
+['Crunch + Beinheben','Kabel / KG',3,'15–20','Bauch komplett','Erst Crunch am Kabel (oberer Bauch), dann Beinheben hängend (unterer Bauch).']]},
+{t:'Tag 5',f:'ARME',l:'Bizeps · Trizeps',c:'#b47fff',b:'Arme isoliert und mit voller Energie. Kein anderer Muskel ermüdet sie vorher.',u:[
+['Bizeps Curl','Maschine',4,'12–15','Bizeps (Volumen)','Kontrolliert senken – der negative Teil baut genauso Muskel auf.'],
+['Hammer Curl','Kabel',3,'12–15','Brachialis (Armbreite)','Neutraler Griff. Brachialis macht den Arm dicker & breiter.'],
+['Trizeps Pushdown','Kabel',4,'12–15','Trizeps (außen)','Ellbogen fixiert am Körper. Trizeps = 2/3 des Oberarms.'],
+['Trizeps Overhead','Kabel',3,'12–15','Trizeps langer Kopf','Nur mit Overhead-Übung erreichbar. Macht den Arm voll.']]}
+];
+var NU=[['Kalorien','2800–3100','kcal','#e8ff47'],['Protein','130–150','g','#47c8ff'],['Kohlenhydrate','350–400','g','#ff6b47'],['Fette','70–90','g','#b47fff']];
+var MU=[['Brust (oben + mitte + Isolation)',[0]],['Latissimus (Breite)',[1]],['Mittlerer Rücken (Tiefe)',[1]],['Schulter vorne & mitte',[3]],['Schulter seitlich',[3]],['Schulter hinten',[1,3],'Face Pull + Reverse Fly'],['Bizeps + Brachialis',[4]],['Trizeps (beide Köpfe)',[4]],['Quad + Gesäß',[2]],['Hamstrings',[2]],['Waden',[2]],['Bauch / Core',[3]]];
+var TS={'Maschine':['#1e1e1e','#888'],'Kabel':['#1a2a1a','#6db86d'],'Kabel / KG':['#1e1a2a','#a07adf']};
+var a=0,x=null;
+function go(i){a=i;x=null;draw()}
+function op(i){x=x===i?null:i;draw()}
+function tab(i){var p=P[i],on=a===i;return '<button class="tb'+(on?' on':'')+'"'+(on?' style="background:'+p.c+'"':'')+' onclick="go('+i+')">'+p.t+'<br><span>'+p.f+'</span></button>'}
+function draw(){
+ var p=P[a],sets=p.u.reduce(function(s,u){return s+u[2]},0),h='';
+ h+='<div class="box"><div class="cap">Ernährung täglich</div><div class="g2">';
+ NU.forEach(function(n){h+='<div class="n" style="color:'+n[3]+';background:'+n[3]+'11;border:1px solid '+n[3]+'33"><small>'+n[0]+'</small><b>'+n[1]+'</b><i>'+n[2]+'</i></div>'});
+ h+='</div><div class="sub">🍗 Hähnchen · Eier · Quark · Thunfisch · Reis · Haferflocken<br>💊 Whey Shake nach dem Training wenn Protein-Ziel nicht erreicht</div></div>';
+ h+='<div class="hd"><div class="cap" style="letter-spacing:5px;margin-bottom:6px">Jeden 2. Tag · 5-Tage Rotation</div><h1>Gym Plan</h1><p>T1 → Pause → T2 → Pause → T3 → Pause → T4 → Pause → T5 → Pause → T1 → ...</p></div>';
+ h+='<div class="strip">';
+ P.forEach(function(q,i){h+='<div style="background:'+q.c+'18;border:1px solid '+q.c+'33;color:'+q.c+'">T'+(i+1)+'<span>'+q.f.split(' ')[0]+'</span></div>'});
+ h+='</div><div class="tabs t3">'+[0,1,2].map(tab).join('')+'</div><div class="tabs t2">'+[3,4].map(tab).join('')+'</div>';
+ h+='<div class="card"><div class="ch" style="background:'+p.c+'"><div class="f">'+p.f+'</div><div class="l">'+p.t+' – '+p.l+'</div><div class="d">'+p.b+'</div><div class="pills"><span>'+p.u.length+' Übungen</span><span>'+sets+' Sätze</span><span>~50–60 Min</span></div></div><div>';
+ p.u.forEach(function(u,i){var s=TS[u[1]]||['#1e1e1e','#888'],o=x===i;
+  h+='<div class="ex'+(o?' open':'')+'" onclick="op('+i+')"><div class="er"><div class="num"'+(o?' style="background:'+p.c+';color:#000"':'')+'>'+(i+1)+'</div><div class="nm"><b>'+u[0]+'</b><div class="meta"><span class="ty" style="background:'+s[0]+';color:'+s[1]+'">'+u[1]+'</span><span class="mu">'+u[4]+'</span></div></div><div class="sw"><span style="color:'+p.c+'">'+u[2]+'×</span><span>'+u[3]+'</span></div></div>';
+  if(o)h+='<div class="no"><div style="border-color:'+p.c+'33">💡 '+u[5]+'</div></div>';
+  h+='</div>'});
+ h+='</div></div><div class="box"><div class="cap">Alle Muskeln abgedeckt</div>';
+ MU.forEach(function(m){h+='<div class="mr"><div style="display:block;flex:1">'+m[0]+(m[2]?' <em>· '+m[2]+'</em>':'')+'</div><div>'+m[1].map(function(t){var c=P[t].c;return '<span style="background:'+c+'22;color:'+c+';border-color:'+c+'44">T'+(t+1)+'</span>'}).join('')+'</div></div>'});
+ h+='</div>';
+ document.getElementById('app').innerHTML=h}
+draw();
+</script>
+<script>if('serviceWorker' in navigator)navigator.serviceWorker.register('sw.js').catch(function(){});</script>
+</body>
+</html>
